@@ -1,0 +1,235 @@
+\documentclass[18pt,a4paper]{moderncv}
+
+\usepackage[FR]{myCV}
+
+\usepackage[]{geometry}
+%	\geometry{bottom=2cm}
+  \geometry{top=1.5cm, bottom=2cm, left=1.5cm , right=1.5cm}
+
+
+\addbibresource[label=biblio]{library.bib}
+
+
+\begin{document}
+\makecvtitle
+\vspace{.5cm}
+\section{\textbf{Mots clés}}
+\cvitem{}{\textbf{\'Energies marines renouvelables}, système houlomoteur, \textbf{hydrodynamique}, modélisation et optimisation numérique, \textbf{contr\^ole-commande}}
+
+%\newpage
+\section{\'Experiences Professionnelles}
+\cventry{2017-(en poste)}{Ingénieur de Recherche}{D-ICE Engineering}{Nantes, France}{}{
+    \begin{itemize}
+        \item Prototypage (mod\'elisation + synth\`ese d'une loi de commande H$_{\infty}$ + $\mu$-analyse + estimateur d'\'etat) d'une solution permettant la suppression du ph\'enom\`ene de \og stick-slip\fg sur les trains de tiges utilisés dans le forage p\'etrolier
+        \item \'Etude de faisabilit\'e (Capability plot) du système de propulsion d'une barge pour opération marine en shallow water
+        \item Dévelopement du module de thrust allocation (formulation quadratique et non-linéaire) de navire dans un logiciel propriétaire de simulation d'opérations marines complexes
+    \end{itemize}
+}
+\cventry{juin-nov 2016}{Postdoc}{\COER, Maynooth University}{Maynooth, Ireland}{}{
+    \begin{itemize}
+        \item \textbf{Commande optimale pseudospectrale} pour systèmes houlomoteurs
+    \end{itemize}
+}
+\cventry{2012-2016}{Doctorat~en Sciences de l'Ingénieur}{\LBMS}{Brest, France}{}{
+    (voir la section \textit{Formation et Activités de Recherche} pour plus de détails)
+    \begin{itemize}
+        \item \textit{Savoir-faire} (sous \textbf{MATLAB/Simulink})
+        \begin{itemize}
+            %                \item[-] Énergie houlomotrice
+            \item[-] Modélisation dynamique de \textbf{structure offshore} (théorie potentielle)
+            \item[-] Résolution d'équation aux dérivées partielles (approche semi-analytique, code BEM: \textbf{NEMOH})
+            \item[-] Commande optimale (\textbf{Model Predictive Control - MPC})
+        \end{itemize}
+        \item \textit{Savoir-être}
+        \begin{itemize}
+            \item[-] \textbf{Autonomie, rigueur}
+        \end{itemize}
+    \end{itemize}    
+}
+\cventry{2012-2015}{Vacataire}{\ENIB}{Brest, France}{}{}
+\cvitemr{{\textit{108h}}}{\textit{Chargé de Td/Tp, 5$^{ème}$ année}, systèmes linéaires, représentation d'état, placement de pôles, filtrage de Kalman, commande LQ/LQG.}%
+\cvitemr{\textit{103h}}{\textit{Chargé de Td/Tp, 4$^{ème}$ année}, électronique d'instrumentation, conversion d'énergie faible puissance.}%
+\cvitemr{\textit{12h}}{\textit{Concours ENI}, Recrutement de première année.}
+\cventry{2009-2010}{Ingénieur}{Hardware Designer}{\textit{IRIS-RFID}}{Brest, France}{
+%    Au sein du département Recherche \& Développement, j'ai participé à la définition des différents lecteurs RFID UHF de la manière suivante:
+    \begin{itemize}
+        \item Spécification des besoins matériels
+        \item Développement de cartes électroniques (saisie de schéma, routage et prototypage)
+        \item Intégration mécanique
+        \item Mise en production (très faible série)
+    \end{itemize}
+}%
+\cventry{2008-2009}{Contrat de professionnalisation}{IRIS-RFID}{Brest,~France}{}{
+%    Au sein du département Recherche et Développement de l'entreprise j'ai participé aux tâches suivantes:
+%    \begin{itemize}
+%        \item Spécification des besoins et achat d'équipements d'instrumentation et de protoypage
+%        \item Premiers développements sur les lecteurs RFID UHF
+%    \end{itemize}
+}%
+
+\section{\textbf{Compétences}}
+\cvitem{Ingénierie}{\textit{Calcul/Modélisation}: MATLAB, Simulink, Scilab, NEMOH (ECN)}
+%\cvitem{}{\textit{CAD}: Solidworks (mCAD) - Eagle, Altium Designer (eCAD)}
+\cvitem{}{\textit{Langages/Outils}: C++, Python / Git}
+%\cvitem{}{\textit{Outils de d\'evelopement}: Git}
+%\cvitem{}{\textit{IDE microcontrôleur}: MPLAB (PIC), IAR, KEIL}
+%\vspace{.25cm}
+\cvitem{Bureautique}{LaTeX, MS Office}
+%\vspace{.25cm}
+\cvitem{Langue}{anglais (lu/écrit/parlé couramment)}
+
+\newpage
+\section{\textbf{Formation et Activités de Recherche}}
+\cventry{2012-2016}{\textbf{Doctorat}{~en Sciences de l'Ingénieur}}{\LBMS}{Brest, France}{}{}
+\cvitem{}{
+	\underline{Titre}: \textit{Contribution à la Modélisation Multi-Physique et au Contrôle Optimal d'un Générateur Houlomoteur - Application à un Système \og Deux Corps\fg{}}.
+}    
+\cvitem{}{  
+    \underline{Résumé}: Cette thèse s'est inscrite dans le cadre du 12$^\text{ème}$ appel à projet du \textit{Fonds Unique Interministériel} (FUI) lancé par l'État au premier semestre 2011.
+    Le projet \og EM BILBOQUET\fg{} a été colabellisé par les pôles de compétitivité Mer Bretagne, Mer PACA et Tenerrdis.
+    Il consiste en la réalisation d'un nouveau système de génération d'électricité issue du mouvement relatif entre deux corps flottants, mus par la houle.
+    Dans cette thèse, nous nous sommes intéressés au contrôle optimal à appliquer sur la génératrice via les convertisseurs statiques, afin d'extraire le maximum d'énergie de la houle incidente.
+    Dans un premier temps, nous avons établi les équations dynamiques régissant le comportement de la structure dans la houle en adoptant les hypothèses de la théorie potentielle.
+    Pour ce faire, nous avons développé un code de calcul spécifique, basé sur une résolution du problème linéaire de tenue à la mer, par des méthodes dites semi-analytiques.
+    Ce code de calcul permet de déterminer les coefficients hydrodynamiques nécessaires à l'écriture de l'équation dynamique dans le domaine fréquentiel, mais aussi dans le domaine temporel via une modification de la formulation de Cummins.
+    Cette dernière nous permet ainsi, dans un second temps, de formuler le problème de maximisation de l'énergie récupérée comme un problème d'optimisation où la variable à optimiser est le couple résistant de la génératrice. Le problème est résolu en temps réel en adoptant une approche par algorithme dit à horizon fuyant.
+}
+\cvitem{}{ 
+\underline{Mots clés}: Houlogénérateur, hydrodynamique, équation intégrale, calcul analytique, contrôle-commande, commande prédictive, otpimisation
+}
+\cvitem{}{  
+    \underline{Jury}: (Thèse soutenue le 13 septembre 2016)
+    \begin{itemize}
+        \item[-] \textit{Président}: Guy \textsc{Clerc}, Professeur, {Université Lyon 1}
+        \vspace{.2cm}
+        \item[-] \textit{Rapporteur}: Alain \textsc{Clément}, Ingénieur de Recherche, {École Centrale de Nantes}
+        \item[-] \textit{Rapporteur}: Tarek \textsc{Ahmed-Ali}, Professeur, {Université de Caen Basse-Normandie}
+        \vspace{.2cm}
+        \item[-] \textit{Examinateur}: Bernard \textsc{Molin}, Professeur Associé - HDR, {École Centrale de Marseille}
+        \item[-] \textit{Examinateur}: John \textsc{Ringwood}, Professeur, {Maynooth University}, Ireland
+        \vspace{.2cm}
+        \item[-] \textit{Invité}: Marc \textsc{Le Boulluec}, Ingénieur, {IFREMER}
+        \vspace{.2cm}
+        \item[-] \textit{Co-encadrant}: Jean-Matthieu \textsc{Bourgeot}, Maître de Conférence, {ENIB}
+        \item[-] \textit{Directeur de Thèse}: Mohamed E.-H. \textsc{Benbouzid}, Professeur, {\UBO}
+    \end{itemize}
+}
+
+\cventry{2010-2011}{Master Recherche}{Universit\'e de Bordeaux I}{Bordeaux, France}{position 2/15}{
+Automatique et Mécatronique pour les systèmes Automobiles, Aéronautiques et Spatiaux~(AM2AS)}
+\cvitem{}{  
+    \underline{Titre}: \textit{Application de la commande sans modèle pour la régulation en vitesse variable d'une Machine à Courant Continu}.
+}
+\cvitem{}{
+    \underline{Résumé}: Dans le cadre du projet FUI \og EM BILBOQUET\fg{}, nous avons réalisé le dimensionnement d'une loi de commande, dite sans modèle ou $\mathbf{i}$-PID, pour une machine à courant continu (MCC) fonctionnant à vitesse variable de manière bidirectionnelle.
+    La MCC devant par la suite servir d'actionneur d'entrainement dans un banc moteur constitué de la MCC et d'une machine synchrone ou asynchrone.
+%    Ce dernier étant dédié à l'évaluation de nouvelles stratégies de commande dans un contexte d'énergies marines renouvelables.
+    Du fait de cette contrainte de bidirectionnalité de l'entrainement, la machine se trouve fortement perturbée par des frottements, surtout à faible vitesse. Afin de s'en prévenir, nous avons proposé une nouvelle stratégie de commande, issue des travaux de M.~Fliess, C.~Join and M.~Mboup sur les estimateurs algébriques. Nous l'avons également comparé avec une commande plus classique (contrôleur PI + feedforward) afin d'évaluer ses performances.
+}
+\cvitem{}{
+    \underline{Mots clés}: Machine à courant continu, commande sans-modèle, $\mathbf{i}$-PID, estimateurs algébriques
+}
+\cvitem{}{
+    \underline{Encadrement}: Dr. Jean-Matthieu \textsc{Bourgeot} (encadrant), Prof. Mohamed E.-H. \textsc{Benbouzid} (co-encadrant)
+}
+
+\newpage
+\cventry{2004-2009}{Diplôme d'Ingénieur}{\ENIB}{Brest}{France}{}
+\cvitem{}{
+    5$^{ème}$ année: Contrat de professionnalisation, \textit{IRIS-RID}, Brest, France.
+}
+\cvitem{}{
+    4$^{ème}$ année: Projet de fin d'étude (6 mois) - Développement d'un enregistreur de données pour un prototype d'éolienne suburbain de la société WINCAP ENERGY, Brest, France.
+}% END OF CVENTRY
+
+\section{\textbf{Autres Activités de Recherche}}
+\cvlistitem{Rapporteur pour les revues IEEE - \textit{Transactions on Sustainable Energy} et \textit{Transactions on Control Systems Technology}.}%
+\cvlistitem{Membre élu des représentants des doctorants au conseil de laboratoire du LBMS (2012-2015)}%
+\cvlistitem{Gestion des séminaires scientifiques pour le centre de recherche Marine Renewable Energy Ireland (MaREI)}
+
+
+% Publications from a BibTeX file using the multibib package
+\section{\textbf{Publications}}
+\begin{refsection}
+\nocite{Faedo2017, Olaya2015a,Olaya2015b,Olaya2014a,Olaya2014c,Olaya2014d,Olaya2013a}%
+\cventry{}{\textsc{Articles dans une revue internationale avec comité de lecture}}{}{}{}{
+\vspace{-.25cm}
+\printbibliography[keyword=olaya,title={Articles de Revue},heading=none,type=article,env=nodis]%,
+}% END OF CVENTRY
+\cventry{}{\textsc{Conférences internationales avec comité de lecture}}{}{}{}{
+\vspace{-.25cm}
+\printbibliography[keyword=olaya,title={Articles de Conférence},heading=none,type=inproceedings,env=nodis]
+}% END OF CVENTRY
+\end{refsection}
+\begin{refsection}
+\nocite{Olaya2013b}%
+\cventry{}{\textsc{Conférences nationales avec comité de lecture}}{}{}{}{
+\vspace{-.25cm}
+\printbibliography[keyword=olaya,title={Articles de Conférence},heading=none,type=inproceedings,env=nodis]
+}% END OF CVENTRY
+\end{refsection}
+
+%\section{Personal Achievement and Interest}
+%\cvitem{Sport}{roller in-line and ice hockey, diving and underwater fishing, judo}
+%% \cvitem{Hobby}{electronic and micro}
+
+\section{Références}
+%%%\cventry{}{Encadrement de thèse}{}{}{}{
+%%%    %\begin{minipage}{.5\linewidth}
+%%%    \parbox[t]{.5\textwidth}{
+%%%        Prof. Mohamed El-Hachemi BENBOUZID\\
+%%%        Universit\'e de Bretagne Occidentale (UBO)\\
+%%%        Rue de Kergoat - CS 93837\\
+%%%        29238 Brest CEDEX 03, FRANCE\\
+%%%        \emailsymbol~\emaillink{mohamed.benbouzid@univ-brest.fr}\\
+%%%        \phonesymbol~+33~(0)2~98~01~80~07
+%%%    }%\end{minipage}
+%%%    %}
+%%%    \hfill
+%%%    \parbox[t]{.5\textwidth}{
+%%%        %\begin{minipage}{.5\linewidth}
+%%%        Dr. Jean-Matthieu BOURGEOT\\
+%%%        \enib\\
+%%%        945, Avenue du Technop\^ole\\
+%%%        29280 Plouzan\'e, FRANCE\\
+%%%        \emailsymbol~\emaillink{bourgeot@enib.fr}\\
+%%%        \phonesymbol~+33~(0)2~98~05~66~28
+%%%        \vfill
+%%%    }%\end{minipage}
+%%%}
+%%%\vspace{.2cm}
+%%%%\cventry{}{Responsable du module contrôle-commande}{}{}{}{
+%%%%    %\begin{minipage}{.5\linewidth}
+%%%%    \parbox[t]{.5\textwidth}{
+%%%%        Prof. St\'ephane AZOU\\
+%%%%        \enib\\
+%%%%        945, Avenue du Technop\^ole\\
+%%%%        29280 Plouzan\'e, FRANCE\\
+%%%%        \emailsymbol~\emaillink{azou@enib.fr}\\
+%%%%        \phonesymbol~+33~(0)2~98~05~66~44
+%%%%    }%\end{minipage}
+%%%%}
+
+\cvitem{}{
+\parbox[t]{.4\textwidth}{
+Prof. Mohamed El-Hachemi BENBOUZID\\
+Universit\'e de Bretagne Occidentale (UBO)\\
+Rue de Kergoat - CS 93837\\
+29238 BREST CEDEX 03, FRANCE\\
+\phonesymbol~+33~(0)2~98~01~80~07\\
+\emailsymbol~\emaillink{mohamed.benbouzid@univ-brest.fr}
+}
+\hspace{.5cm}%\separatorcolumnwidth}
+\parbox[t]{.40\textwidth}{
+Dr. Jean-Matthieu BOURGEOT\\
+\ENIB\\
+945, Avenue du Technop\^ole\\
+29280 PLOUZAN\'E, FRANCE\\
+\phonesymbol~+33~(0)2~98~05~66~28\\
+\emailsymbol~\emaillink{bourgeot@enib.fr}
+\vfill
+}
+}% END OF CVITEM
+
+
+\end{document}

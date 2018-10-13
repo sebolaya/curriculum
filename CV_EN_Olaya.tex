@@ -1,0 +1,154 @@
+\documentclass[11pt, a4paper]{moderncv}
+
+\usepackage[EN]{myCV}
+
+\usepackage[]{geometry}
+%	\geometry{bottom=2cm}
+\geometry{top=1.5cm, bottom=2cm, left=1.5cm , right=1.5cm}
+\addbibresource[label=biblio]{library.bib}
+
+\begin{document}
+\makecvtitle
+
+\section{\textbf{Research Interest}}
+\cvitem{}{Marine renewable energy, wave energy converter, hydrodynamic, robust control, power electronics, numerical modelling and optimisation, optimal control}
+
+\section{Professional Experience}
+\cventry{2017-2018}{Control Systems Engineer}{D-ICE Engineering}{Nantes, France}{}{
+    \begin{itemize}
+        \item Stick-slip mitigation control strategy based on H$_\infty$ theory (with $\mu$-analysis) and Kalman filtering techniques (KF, EKF, CKF) for Oil\&Gas industry.
+        \item Dynamic Positioning (DP) Capability analysis (DNVGL-ST-0111 Level 2) with inhouse software.
+        \item Development of a thrust allocation module in an inhouse DP software (non-linear and quadratic formulations) indended to be used for complex naval operation analysis.
+    \end{itemize}
+}
+\cventry{jun-nov 2016}{Postdoc}{\COER, Maynooth University}{Maynooth, Ireland}{}{
+    \begin{itemize}
+        \item Optimal control (pseudo-spectral) for wave energy conversion.
+    \end{itemize}
+}
+\cventry{2012-2015}{Assistant Lecturer}{\enib}{Brest, France}{}{}
+\cvitemr{{\textit{108h}}}{\textit{Practical work}, Linear control theory (frequency and state-space representation), Kalman filtering.}%
+\cvitemr{\textit{103h}}{\textit{Lecture and practical work}, Power electronic and data acquisition system design.}%
+\cvitemr{\textit{24h}}{\textit{Competitive exam for ENI group}, First year recruitment.}
+
+\cventry{2009-2010}{Electronic Engineer}{IRIS-RFID}{Brest, France}{}{
+    \begin{itemize}
+        \item Hardware designer - specification, printed circuit board (PCB) design and, mechanical integration, for low power consumption embedded systems running Linux and dedicated to RFID UHF scanner.
+    \end{itemize}
+}%
+\cventry{2008-2009}{Professional training contract}{IRIS-RFID}{Brest, France}{Hardware Designer}{}
+
+\section{\textbf{Qualifications}}
+\cventry{2012-2016}{Ph.D Student}{\LBMS}{Brest, France}{}{Dissertation topic related to ocean energy engineering.}
+\cventry{2010-2011}{M.Sc~-~$\mathbf2^{nd}$ year}{Universit\'e de Bordeaux I}{Bordeaux, France}{with honours, position 2/15}{
+    Master of Science - Automatic control and Mechatronics for Automotive, Aeronautics \& Space~(AM2AS)
+}
+\cventry{2004-2009}{M.Eng}{\ENIB}{Brest}{France}{
+    \enib~is an engineering school (part of "Grandes \'Ecoles") that integrates the preparatory cycle (2~years) and the undegraduate engineer cycle (3~years).
+%    \begin{itemize}
+%        \item Final year - sandwich course scheme with the \textit{IRIS-RID} company.
+%        \item Final project assignment (6 months) during the fourth year - Datalogger design for a suburban prototype windmill for WINCAP Energy Company based in Brest, France.
+%    \end{itemize}
+}% END OF CVENTRY
+
+\section{\textbf{IT Skills}}
+\cvitem{}{\textbf{Languages}: MATLAB/Simulink, C++, Python}
+%\cvitem{}{\textbf{Offshore structure analysis}: semi-analytical approach, NEMOH (ECN), FAST}
+%\vspace{.25cm}
+\cvitem{}{\textbf{CAD}: mCAD: Solidworks; eCAD: Eagle}
+%\vspace{.25cm}
+\cvitem{}{\textbf{Others}: LaTeX, MS Office}
+%\vspace{.25cm}
+
+\section{\textbf{Language skills}}
+\cvitem{}{\textbf{Native}: French}
+\cvitem{}{\textbf{Proficient}: English (2008, TOEIC 775)}
+
+\section{Personal Achievement and Interest}
+\cvitem{Sport}{roller in-line and ice hockey, diving and underwater fishing, judo}
+
+\section{\textbf{Research Activities}}
+\cventry{2012-2016}{Ph.D Student in Ocean Energy Engineering}{\LBMS}{Brest, France}{}{
+\begin{itemize}
+  \item \textit{Dissertation topic~-} On Multiphysics Modeling and Optimal Control of Wave Energy Converter - Application to a Self-Reacting Point Absorber.
+  \item \textit{Abstract~-} This thesis received a financial support from the \textit{Fond Unique Interminist\'eriel} (FUI) from the French government for the project "EM BILBOQUET". This project is about the conception of new wave energy converter that is a self-reacting point absorber. The main purpose of the study is to propose a control strategy that maximises the energy extraction from incoming waves. Main researches use seabed for providing reference to a floating body, called buoy. However, as it is well-known that ocean energy is greater far away from the shore, sea-depth becomes a constraint. In this thesis, a damping plate attached to a spar keel is used in order that the floating body can react against it. Energy resulting from the relative motion between the two concentric bodies i.e. the buoy and the spar, is harnessed by a rack-and-pinion which drives a permanent magnet synchronous generator through a gearbox. In the first part of the thesis we developed a wave-to-wire model i.e. a model of the whole electro-mechanical chain from sea to grid. For this purpose we developed a dedicated hydrodynamic code, based on linear potential theory and on a semi-analytical approach, solving the seakeeping problem. The hydrodynamic coefficients obtained such as added mass and infinite added mass, radiation damping and wave excitation forces are required for solving the dynamic equation based on the Cummins formulation. The second part of the thesis focuses on the self-reacting point-absorber optimal control strategy and the Model Predictive Control (MPC) formulation is proposed. Objective function attempting to optimise the power generation is directly formulated as an absorbed power maximisation problem and thus no optimal references, such as buoy and/or spar velocity, are required. However, rather than using the full-order WEC model in the optimisation problem, that can be time-consuming due to its high order, and also because of the linear assumptions, we propose the use of a ``phenomenologically" one-body equivalent model derived from the Th\'evenin's theorem. Because MPC can harness actuator limits in its formulation, we also proposed a simple methodology to pre-design the main generator characteristics i.e. nominal generator power rating and velocity, that constraint the control input in the maximisation problem.
+  \item \textit{Keywords~-} wave energy converter, self-reacting point absorber, seakeeping problem, optimal control, model predictive control, generator pre-design
+  \item \textit{Supervisors~-} Prof. Mohamed BENBOUZID and Dr. Jean-Matthieu BOURGEOT.
+\end{itemize}
+}
+\cventry{2010-2011}{M.Sc~-~$\mathbf2^{nd}$ year}{Universit\'e de Bordeaux I}{Bordeaux, France}{with honours, position 2/15}{
+Master of Science - Automatic control and Mechatronics for Automotive, Aeronautics \& Space~(AM2AS)
+\begin{itemize}
+	\item \textit{Dissertation topic} - Model-free control or \textit{i}-PID applied to a DC motor working at low-speed and for bi-directional operation.
+	\item \textit{Abstract~-} As part of the project FUI "EM BILBOQUET", we performed a study for implementing an electromechanical test bench for the future design of control laws for electrical generator. We focus on the actuator part that is carried out by a DC motor. Because we have to work at low speeds and for bi-directional operation, we have to reject frictions that disturb the machine. In this context we propose a new control law based on free-model control, resulting from works by M.~Fliess, C.~Join and M.~Mboup on fast algebraic estimators. We compare our results with a more classical control strategy i.e. Proportional Integral controller + feedforward.
+	\item \textit{Keywords~-} DC motor, model-free control, \textit{i}-PID, algebraic estimator
+	\item \textit{Supervisors~-} Prof. Mohamed BENBOUZID and Dr. Jean-Matthieu BOURGEOT.
+\end{itemize}
+}
+
+
+\section{\textbf{Other Reasearch Activities}}
+\cvlistitem{Reviewer for IEEE journals - \textit{Transactions on Sustainable Energy} et \textit{Transactions on Control Systems Technology}}%
+\cvlistitem{Member-Elect of the Laboratory council representing the Ph.D students - 2012/2013}%
+\cvlistitem{In charge of the scientific seminars for the research centre Marine Renewable Energy Ireland (MaREI)}
+
+\section{\textbf{List of Publications}}
+% Publications from a BibTeX file using the multibib package
+\begin{refsection}
+    \nocite{Faedo2017,Olaya2015a,Olaya2015b,Olaya2014a,Olaya2014c,Olaya2014d,Olaya2013a}%
+    \cventry{}{\textsc{Peer-reviewed Journals}}{}{}{}{
+        \vspace{-.25cm}
+        \printbibliography[keyword=olaya,title={Articles de Revue},heading=none,type=article,env=nodis]%,
+    }% END OF CVENTRY
+    \cventry{}{\textsc{Peer-reviewed International Conferences}}{}{}{}{
+        \vspace{-.25cm}
+        \printbibliography[keyword=olaya,title={Articles de Conférence},heading=none,type=inproceedings,env=nodis]
+    }% END OF CVENTRY
+\end{refsection}
+\begin{refsection}
+    \nocite{Olaya2013b}%
+    \cventry{}{\textsc{Peer-reviewed National Conferences}}{}{}{}{
+        \vspace{-.25cm}
+        \printbibliography[keyword=olaya,title={Articles de Conférence},heading=none,type=inproceedings,env=nodis]
+    }% END OF CVENTRY
+\end{refsection}
+% \cvitem{Hobby}{electronic and micro}
+
+\section{Referees}
+\cventry{}{Ph.D supervisor and co-supervisor}{}{}{}{
+%\begin{minipage}{.5\linewidth}
+\parbox[t]{.5\textwidth}{
+Prof. Mohamed El-Hachemi BENBOUZID\\
+Universit\'e de Bretagne Occidentale (UBO)\\
+Rue de Kergoat - CS 93837\\
+29238 Brest CEDEX 03, FRANCE\\
+\emailsymbol~\emaillink{mohamed.benbouzid@univ-brest.fr}\\
+\phonesymbol~+33~(0)2~98~01~80~07
+}%\end{minipage}
+%}
+\hfill
+\parbox[t]{.5\textwidth}{
+%\begin{minipage}{.5\linewidth}
+Dr. Jean-Matthieu BOURGEOT\\
+\enib\\
+945, Avenue du Technop\^ole\\
+29280 Plouzan\'e, FRANCE\\
+\emailsymbol~\emaillink{bourgeot@enib.fr}\\
+\phonesymbol~+33~(0)2~98~05~66~28
+}%\end{minipage}
+}
+\vspace{.2cm}
+\cventry{}{Head of control theory lectures}{\enib}{Brest}{France}{
+%\begin{minipage}{.5\linewidth}
+\parbox[t]{.5\textwidth}{
+Prof. St\'ephane AZOU\\
+\enib\\
+945, Avenue du Technop\^ole\\
+29280 Plouzan\'e, FRANCE\\
+\emailsymbol~\emaillink{azou@enib.fr}\\
+\phonesymbol~+33~(0)2~98~05~66~44
+}%\end{minipage}
+}
+
+
+\end{document}
