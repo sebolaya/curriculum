@@ -1,0 +1,262 @@
+\def\fileversion{1.0}
+\def\filedate{2015/04/20}
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{myCV}[\filedate\space v\fileversion]
+
+% --------------------------------------------------------
+%				Declare Modern CV theme
+% --------------------------------------------------------
+\moderncvtheme[blue]{classic}
+
+% All colors are defined in the moderncvcolorxxxx.sty file.
+
+\newif\if@FR     \@FRfalse
+\newif\if@EN     \@ENfalse
+
+% --------------------------------------------------------
+%				Declare options
+% --------------------------------------------------------
+\DeclareOption{FR}{
+\PassOptionsToPackage{frenchb}{babel}
+\@FRtrue
+}
+
+\DeclareOption{EN}{
+\@ENtrue
+}
+
+\ProcessOptions
+
+\if@FR
+	\RequirePackage[utf8]{inputenc}		% Pour avoir les accents (latin1 pour Unix/Windows)
+	\RequirePackage{babel}				% Pour utiliser les règles de typographie françaises
+\fi
+	
+\RequirePackage{libertine}
+%\RequirePackage[top=2.cm, bottom=1.cm, left=1.5cm, right=1.5cm]{geometry}
+\RequirePackage{amsmath}
+% Largeur de la colonne pour les dates
+\setlength{\hintscolumnwidth}{2.5cm}
+
+
+\RequirePackage[normalem]{ulem} % pour souligner mon nom dans la biblio
+
+% --------------------------------------------------------
+% 	    				CV TITLE
+% --------------------------------------------------------
+\firstname{\scshape{S\'ebastien}}
+\familyname{\scshape{OLAYA}}
+
+% \title{Curriculum Vitae}
+\address{1, rue Paul Gauguin, Apt.12}{44240 La Chapelle/Erdre, France}%{}
+\email{seb.olaya@gmail.com}
+%\phone{+33~(0)2~98~05~66~46}
+\mobile{+33~(0)6~67~86~02~60}
+\photo[0pt][0pt]{S_OLAYA.jpg}%{Sebastien_gray.eps}
+\if@FR
+	\title{\textbf{Docteur-Ing\'enieur}}
+	\extrainfo{N\'e le 13 avril 1986 \`a Brest,~France\\
+        {www.researchgate.net/profile/Sebastien\_Olaya}}
+\fi
+
+\if@EN
+	\title{\textbf{Ph.D}}
+	\extrainfo{Born on 13th April 1986 in Brest,~France\\
+               {www.researchgate.net/profile/Sebastien\_Olaya}
+               }
+\fi
+
+
+
+% ----------------------> Bibliographie <----------------------
+\PassOptionsToPackage{
+	backend=biber,			% Specifies the database backend (bibtex, biber, ...)
+	refsection=subsection,		% Start a reference section at every \chapter command (none, part, chapter, section, subsection).
+	style=authoryear,%-comp,	%
+	dashed=false,			% Set dashed option to false (repeat name in the bibliography)
+	hyperref=true,			% To transform citations and back references into clickable hyperlinks
+	backref=false,			% To print back references in the bibliography.
+	natbib=false,			% Loads compatibility module which provides aliases for the citation commands of the natbib package
+	maxbibnames=99,			% A threshold affecting all lists of names (author, editor, etc.) - in bibliography
+	maxcitenames=2,			% A threshold affecting all lists of names (author, editor, etc.) - in document body
+	firstinits=true,
+	uniquename=init,		% This feature will disambiguate individual names in the labelname list
+	parentracker=true,
+	url=false,
+	doi=false,
+	isbn=false,
+	eprint=false,
+	useeditor=true,
+	defernumbers=true,
+	sorting=ydnt,			% Sort by year (descending), name, title. (see doc p45)
+}{biblatex}
+\RequirePackage{biblatex} %[natbib=true,backend=biber]
+
+% Redéfinition de quelques commandes pour une utilisation optimale :D
+\renewbibmacro{in:}{} % remove the "In" avant {proceeding,...}
+\renewcommand\cite{\textcite}		% Redéfinition de la commande \cite pour pouvoir utiliser eclle de natbib \citet
+
+\AtEveryBibitem{\clearlist{language}}	% Permet de désactiver le champ "language" pour qu'il ne s'affiche pas dans la biblio
+
+% to skip labelyear disambiguation (2015a,2015b,...) -> \printbibliography[....,env=nodis]
+\defbibenvironment{nodis}
+  {\list
+     {}
+     {\setlength{\leftmargin}{\bibhang}%
+      \setlength{\itemindent}{-\leftmargin}%
+      \setlength{\itemsep}{\bibitemsep}%
+      \setlength{\parsep}{\bibparsep}}}
+  {\endlist}
+  {\clearfield{extrayear}\item}
+
+\if@FR
+\@namedef{Olaya2014cnote}{\newline \textbf{\textit{1$^\text{er}$ prix du meilleur poster présenté lors de la conférence}}}
+\@namedef{Olaya2014dnote}{\newline \textbf{\textit{1$^\text{er}$ prix du meilleur article présenté lors de la conférence}}}
+\fi
+
+\if@EN
+\@namedef{Olaya2014cnote}{\textbf{\textit{Best poster award}}}
+\@namedef{Olaya2014dnote}{\textbf{\textit{Excellent paper award}}}
+\fi
+
+\DeclareSourcemap{% Voir la doc de biblatex --> L'avantage de cette commande c'est que l'on ne modifie pas le fichier source (.bib) mais on modifie le flux de données (.bbl)
+\maps[datatype=bibtex]{
+	\map[overwrite]{
+		\step[fieldsource=author, match=Olaya, final]%replace=\regexp{Olaya}]%\textbf{Olaya}
+		\step[fieldset=keywords, fieldvalue={,}, append]			% add a comma to the keywords field
+		\step[fieldset=keywords, fieldvalue={olaya}, append]		% add my name
+		\step[fieldsource=entrykey, match={Olaya2014c}]
+		\step[fieldset=addendum, fieldvalue=\unexpanded{\csname\thefield{entrykey}note\endcsname}]	% addenbnum (see manual  p.14)
+		\step[fieldsource=entrykey, match={Olaya2014d}]
+		\step[fieldset=addendum, fieldvalue=\unexpanded{\csname\thefield{entrykey}note\endcsname}]	% addenbnum (see manual  p.14)
+	}
+}}
+
+%\newcommand{\makeauthorbold}[1]{% Mettre mon nom en gras dans la biblio
+%\DeclareNameFormat{author}{%
+%  \ifnumequal{\value{listcount}}{1}
+%    {\ifnumequal{\value{liststop}}{1}
+%      {\expandafter\ifstrequal{##1}{#1}{\textbf{##1\addcomma\addspace ##4\addcomma\isdot}}{##1\addcomma\addspace ##4\addcomma\isdot}}
+%      {\expandafter\ifstrequal{##1}{#1}{\textbf{##1\addcomma\addspace ##4}}{##1\addcomma\addspace ##4}}}
+%    {\ifnumless{\value{listcount}}{\value{liststop}}
+%      {\expandafter\ifstrequal{##1}{#1}{\textbf{\addcomma\addspace ##1\addcomma\addspace ##4}}{\addcomma\addspace ##1\addcomma\addspace ##4}}
+%      {\expandafter\ifstrequal{##1}{#1}{\textbf{\addcomma\addspace ##1\addcomma\addspace ##4\addcomma\isdot}}{\addcomma\addspace ##1\addcomma\addspace ##4\addcomma\isdot}}}%
+%}}
+
+%\newcommand{\makeauthorunderline}[1]{% Souligner mon nom dans la biblio
+%\DeclareNameFormat{author}{%
+%  \ifnumequal{\value{listcount}}{1}
+%    {\ifnumequal{\value{liststop}}{1}
+%      {\expandafter\ifstrequal{##1}{#1}{\uline{##1\addcomma\addspace ##4\addcomma\isdot}}{##1\addcomma\addspace ##4\addcomma\isdot}}
+%      {\expandafter\ifstrequal{##1}{#1}{\uline{##1\addcomma\addspace ##4}}{##1\addcomma\addspace ##4}}}
+%    {\ifnumless{\value{listcount}}{\value{liststop}}
+%      {\expandafter\ifstrequal{##1}{#1}{\uline{\addcomma\addspace ##1\addcomma\addspace ##4}}{\addcomma\addspace ##1\addcomma\addspace ##4}}
+%      {\expandafter\ifstrequal{##1}{#1}{\uline{\addcomma\addspace ##1\addcomma\addspace ##4\addcomma\isdot}}{\addcomma\addspace ##1\addcomma\addspace ##4\addcomma\isdot}}}%
+%}}
+%
+%%\makeauthorbold{Olaya}
+%\makeauthorunderline{Olaya}
+
+% --------------------------------------------------------
+%					Define Some New Commands 
+% --------------------------------------------------------
+% \def\ENIB{\'{E}cole Nationale d\textquoteright Ing\'{e}nieurs de Brest (ENIB)}
+\newcommand{\ENIB}{\'Ecole Nationale d'Ing\'enieurs de Brest~(ENIB)}
+\newcommand{\enib}{\'Ecole Nationale d'Ing\'enieurs de Brest}
+% \def\ENIB{Brest National Engineering School~(ENIB)}
+\newcommand{\LBMS}{Institut de Recherche Dupuy de L\^ome~(IRDL)} % FRE CNRS 3744
+\newcommand{\IRDL}{Institut de Recherche Dupuy de L\^ome~(IRDL)} % FRE CNRS 3744
+\newcommand{\COER}{Centre for Ocean Energy Research (COER)}
+\newcommand{\UBO}{Universit\'e de Bretagne Occidentale}
+
+% fonts
+\renewcommand*{\sectionfont}{\Large\bfseries\scshape}
+
+\renewcommand*{\makecvtitle}{%
+  % recompute lengths (in case we are switching from letter to resume, or vice versa)
+  \recomputecvlengths%
+  % optional detailed information (pre-rendering)
+  \def\phonesdetails{}%
+  \collectionloop{phones}{% the key holds the phone type (=symbol command prefix), the item holds the number
+    \protected@edef\phonesdetails{\phonesdetails\protect\makenewline\csname\collectionloopkey phonesymbol\endcsname\collectionloopitem}}%
+  \def\socialsdetails{}%
+  \collectionloop{socials}{% the key holds the social type (=symbol command prefix), the item holds the link
+    \protected@edef\socialsdetails{\socialsdetails\protect\makenewline\csname\collectionloopkey socialsymbol\endcsname\collectionloopitem}}%
+  \newbox{\makecvtitledetailsbox}%
+  \savebox{\makecvtitledetailsbox}{%
+    \addressfont\color{color0}%color2
+    \begin{tabular}[b]{@{}r@{}}%
+      \ifthenelse{\isundefined{\@addressstreet}}{}{\makenewline\addresssymbol\@addressstreet%
+        \ifthenelse{\equal{\@addresscity}{}}{}{\makenewline\@addresscity}% if \addresstreet is defined, \addresscity and addresscountry will always be defined but could be empty
+        \ifthenelse{\equal{\@addresscountry}{}}{}{\makenewline\@addresscountry}}%
+      \phonesdetails% needs to be pre-rendered as loops and tabulars seem to conflict
+      \ifthenelse{\isundefined{\@email}}{}{\makenewline\emailsymbol\emaillink{\@email}}%
+      \ifthenelse{\isundefined{\@homepage}}{}{\makenewline\homepagesymbol\httplink{\@homepage}}%
+      \socialsdetails% needs to be pre-rendered as loops and tabulars seem to conflict
+      \ifthenelse{\isundefined{\@extrainfo}}{}{\makenewline\@extrainfo}%
+    \end{tabular}
+  }%
+  % optional photo (pre-rendering)
+  \newbox{\makecvtitlepicturebox}%
+  \savebox{\makecvtitlepicturebox}[\hintscolumnwidth]{%
+    \ifthenelse{\isundefined{\@photo}}%
+    {}%
+    {%
+%       \hspace*{\separatorcolumnwidth}%
+      \color{color1}%
+      \setlength{\fboxrule}{\@photoframewidth}%
+      \ifdim\@photoframewidth=0pt%
+        \setlength{\fboxsep}{0pt}
+      \fi%
+%       \framebox{\includegraphics[width=\@photowidth]{\@photo}}
+%       \ifdim\@photowidth=0pt%
+      \ifthenelse{\lengthtest{\@photowidth=0pt}}
+        {\framebox{\includegraphics[width=\hintscolumnwidth]{\@photo}}}%si 0pt on choisit la longueur de la bande bleu
+        {\framebox{\includegraphics[width=\@photowidth]{\@photo}}}
+    }%
+  }%
+  % name and title
+  \newlength{\makecvtitledetailswidth}\settowidth{\makecvtitledetailswidth}{\usebox{\makecvtitledetailsbox}}%
+  \newlength{\makecvtitlepicturewidth}\settowidth{\makecvtitlepicturewidth}{\usebox{\makecvtitlepicturebox}}%
+  \ifthenelse{\lengthtest{\makecvtitlenamewidth=0pt}}
+    {\setlength{\makecvtitlenamewidth}{\textwidth-\separatorcolumnwidth-\makecvtitledetailswidth-\makecvtitlepicturewidth}}%
+    {}%
+  \newbox{\makecvtitlenamebox}%
+  \savebox{\makecvtitlenamebox}{%
+    \begin{minipage}[b]{\makecvtitlenamewidth}
+      \namestyle{\@firstname\ \@lastname}%
+      \ifthenelse{\equal{\@title}{}}{}{\\[.5cm]\titlestyle{\@title}}%
+    \end{minipage}
+  }    
+  \parbox[b]{\hintscolumnwidth}{\usebox{\makecvtitlepicturebox}}
+  \hspace{\separatorcolumnwidth}%
+  \parbox[b]{\makecvtitlenamewidth}{\usebox{\makecvtitlenamebox}}
+  \hfill
+  \parbox[b]{\makecvtitledetailswidth}{
+    \llap{\usebox{\makecvtitledetailsbox}}
+    % optional quote
+    \ifthenelse{\isundefined{\@quote}}%
+      {}%
+      {{\centering\begin{minipage}{\quotewidth}\centering\quotestyle{\@quote}\end{minipage}\\[2.5em]}}%
+  }
+  \par% to avoid weird spacing bug at the first section if no blank line is left after \makecvtitle
+}
+
+\renewcommand*{\cvitem}[3][.25em]{%
+  \begin{tabular}{@{}p{\hintscolumnwidth}@{\hspace{\separatorcolumnwidth}}p{\maincolumnwidth}@{}}%
+    \hintstyle{#2}&{#3}%
+  \end{tabular}%
+  \par\addvspace{#1}
+}%
+
+\newcommand*{\cvitemr}[3][.25em]{%
+  \begin{tabular}{@{}p{\hintscolumnwidth}@{\hspace{\separatorcolumnwidth}}p{\maincolumnwidth}@{}}%
+    \raggedleft\hintstyle{\small{#2}}&{#3}%
+  \end{tabular}%
+  \par\addvspace{#1}
+}%
+
+
+
+\endinput
+%% end of file `myCV.sty'.
